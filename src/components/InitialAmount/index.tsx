@@ -7,14 +7,17 @@ interface InitialAmountProps {
 
 const InitialAmount: React.FC<InitialAmountProps> = ({ value, setValue }) => {
     return (
-        <div>
-            <label>Starting with: </label>
+        <div className="depositField">
+            <label className="depositLabel">Starting with: </label>
             <input
                 type="number"
                 value={value}
                 onChange={(e) => setValue(Number(e.target.value))}
                 placeholder="$10000"
+                max={1500000}
+                min={1000}
                 required
+                className="depositInput"
             />
         </div>
     )

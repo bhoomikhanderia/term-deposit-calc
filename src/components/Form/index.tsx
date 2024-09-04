@@ -15,14 +15,14 @@ const Form = () => {
 
 
     return (
-        <form>
+        <form className="depositForm">
             <InitialAmount value={initialAmount} setValue={setInitialAmount} />
             <InterestRatePercent value={interestRatePercent} setValue={setInterestRatePercent} />
             <InvestmentTermDuration value={investmentTermDuration} setValue={setInvestmentTermDuration} />
             <InterestFrequencySelector value={interestFrequency} setValue={setInterestFrequency} />
-            {initialAmount > 0 && <div>Initial Deposit: ${initialAmount}</div>}
-            {interest > 0 && <div>Total Interest Earned: ${interest}</div>}
-            {balance > 0 && <div>Final Balance Earned: ${balance}</div>}
+            {initialAmount > 0 && <div className="depositField">Initial Deposit: ${initialAmount}</div>}
+            {interest > 0 && <div className="depositField">Total Interest Earned: ${interest}</div>}
+            {balance > 0 && <div className="depositField">Final Balance Earned: ${balance}</div>}
         </form>  
     )
 }

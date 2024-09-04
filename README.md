@@ -50,7 +50,7 @@ Visit http://localhost:3000/ to view output
 To run the tests,
 
 ```
-$ npm test
+$ yarn test
 ```
 
 Launches the test runner in the interactive watch mode.\

@@ -9,7 +9,7 @@ interface InterestFrequencySelectorProps {
 const InterestFrequencySelector: React.FC<InterestFrequencySelectorProps> = ({ value, setValue }) => {
     return (
         <div>
-            <label>Interest Paid: </label>            
+            <label className="depositLabel">Interest Paid: </label>            
                 {Object.values(InterestPaidFrequency).map((frequency) => (
                     <>
                         <input type="radio" name="frequency" key={frequency} id={frequency} value={frequency} onChange={(e) => setValue(e.target.value as any)} checked={value === frequency} />

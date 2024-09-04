@@ -8,6 +8,7 @@ export const getInterestPaidFrequency = (frequency: InterestPaidFrequency) => {
 };
 
 export const calculateInterest = (fields: TermDepositFields) => {
+    validateInputs(fields);
     const { initialAmount, interestRatePercent, investmentTermDuration, interestFrequency } = fields;
     if (interestFrequency === "At Maturity")
     return Math.round(
@@ -27,3 +28,17 @@ export const generateInterestAndBalance = (fields: TermDepositFields) => {
     const interest = calculateInterest(fields);
     return { interest, balance: interest + fields.initialAmount };
 };
+
+export const validateInputs = (fields: TermDepositFields) => {
+    if (fields.initialAmount < 10 || fields.initialAmount > 1500000) {
+        throw new Error("Please enter a value between $1,000 and $1,500,000");
+    }
+
+    if (fields.interestRatePercent < 0 || fields.interestRatePercent > 15) {
+        throw new Error("Please enter a value between 0 and 15");
+    }
+
+    if (fields.investmentTermDuration < 3 || fields.investmentTermDuration > 60) {
+        throw new Error("Please enter a value between 3 months and 5 years");
+    }
+}

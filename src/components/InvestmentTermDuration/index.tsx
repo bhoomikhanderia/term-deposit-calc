@@ -20,14 +20,15 @@ const InvestmentTermDuration: React.FC<InvestmentTermDurationProps> = ({ value, 
     };
 
     return (
-        <div>
-            <label>Investment Term Duration: </label>
+        <div className="depositField">
+            <label className="depositLabel">Investment Term Duration: </label>
             <input
                 type="range"
                 value={value}
                 min={3}
                 max={60}
                 onChange={(e) => setValue(Number(e.target.value))}
+                className="depositDuration"
             />
             <>{getInvestmentTermDuration(value)}</>
         </div>

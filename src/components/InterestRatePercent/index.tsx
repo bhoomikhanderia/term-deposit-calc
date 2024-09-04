@@ -7,8 +7,8 @@ interface InterestRatePercentProps {
 
 const InterestRatePercent: React.FC<InterestRatePercentProps> = ({ value, setValue }) => {
     return (
-        <div>
-            <label>Interest Rate %: </label>
+        <div className="depositField">
+            <label className="depositLabel">Interest Rate %: </label>
             <input
                 type="number"
                 step="0.1"
@@ -18,6 +18,7 @@ const InterestRatePercent: React.FC<InterestRatePercentProps> = ({ value, setVal
                 onChange={(e) => setValue(Number(e.target.value))}
                 placeholder="1.0%"
                 required
+                className="depositInput"
             />
         </div>
     );
