@@ -1,14 +1,14 @@
 import React from 'react';
-import './App.css';
+import './styles/app.scss';
+import { TermDepositCalculator } from './components/TermDepositCalculator';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>
           Term Deposit Calculator
-        </p>
       </header>
+      <TermDepositCalculator />    
     </div>
   );
 }
