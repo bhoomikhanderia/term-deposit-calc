@@ -11,6 +11,7 @@ const InterestRatePercent: React.FC<InterestRatePercentProps> = ({ value, setVal
             <label className="depositLabel">Interest Rate %: </label>
             <input
                 type="number"
+                data-testid="interest-rate"
                 step="0.1"
                 min="0"
                 max="15"

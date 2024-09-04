@@ -8,7 +8,7 @@ interface InterestFrequencySelectorProps {
 
 const InterestFrequencySelector: React.FC<InterestFrequencySelectorProps> = ({ value, setValue }) => {
     return (
-        <div>
+        <div >
             <label className="depositLabel">Interest Paid: </label>            
                 {Object.values(InterestPaidFrequency).map((frequency) => (
                     <>

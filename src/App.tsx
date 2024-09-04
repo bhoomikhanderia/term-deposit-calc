@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles/app.scss';
-import { TermDepositCalculator } from './components/TermDepositCalculator';
+import { TermDepositCalculator } from './components/TermDepositCalculator/TermDepositCalculator';
 
 function App() {
   return (

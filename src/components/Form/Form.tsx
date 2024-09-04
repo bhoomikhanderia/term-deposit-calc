@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import InitialAmount from '../InitialAmount';
-import InterestRatePercent from '../InterestRatePercent';
-import InvestmentTermDuration from '../InvestmentTermDuration';
-import InterestFrequencySelector from '../InterestFrequencySelector';
+import InitialAmount from '../InitialAmount/InitialAmount';
+import InterestRatePercent from '../InterestRatePercent/InterestRatePercent';
+import InvestmentTermDuration from '../InvestmentTermDuration/InvestmentTermDuration';
+import InterestFrequencySelector from '../InterestFrequencySelector/InterestFrequencySelector';
 import { InterestPaidFrequency } from '../../utils/types';
 import { generateInterestAndBalance } from '../../utils/termDepositCalculatorFunctions';
 
