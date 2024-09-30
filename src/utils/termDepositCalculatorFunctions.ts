@@ -42,3 +42,30 @@ export const validateInputs = (fields: TermDepositFields) => {
         throw new Error("Please enter a value between 3 months and 5 years");
     }
 }
+
+interface BalancePerMonth {
+    month: number,
+    interestEarned: number,
+    balance: number
+}
+
+export const generateBalancePerMonth = (months: number, interestRate: number, startingBalance:number): BalancePerMonth[] => {
+    const interestPerMonth = interestRate / 12 / 100;
+    const balancePerMonth: BalancePerMonth[] = [];
+    let currentBalance = startingBalance;
+
+    for (let i = 1; i <= months; i++){
+        const interestEarned = parseFloat((currentBalance * interestPerMonth).toFixed(2));
+        currentBalance = currentBalance + interestEarned;
+
+        const cumulativeInterestEarned = parseFloat((currentBalance - startingBalance).toFixed(2));
+
+        balancePerMonth.push({
+            month: i,
+            interestEarned: cumulativeInterestEarned,
+            balance: currentBalance
+
+        })
+    }
+    return balancePerMonth;
+}
